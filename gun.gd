@@ -3,6 +3,7 @@ extends Node2D
  
 const BULLET = preload("res://bullet.tscn")
  
+var ammo = 6
  
 @onready var muzzle: Marker2D = $Marker2D
  
@@ -18,8 +19,12 @@ func _process(delta: float) -> void:
  
  
 	if Input.is_action_just_pressed("fire"):
-		print("a")
-		var bullet_instance = BULLET.instantiate()
-		get_parent().add_sibling(bullet_instance)
-		bullet_instance.global_position = muzzle.global_position
-		bullet_instance.set_direction(muzzle.global_transform.x)
+		if ammo > 0:
+			var bullet_instance = BULLET.instantiate()
+			get_parent().add_sibling(bullet_instance)
+			bullet_instance.global_position = muzzle.global_position
+			bullet_instance.set_direction(muzzle.global_transform.x)
+			ammo -= 1
+			print(ammo)
+		else:
+			print("no bullet hahah")
