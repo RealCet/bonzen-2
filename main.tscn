@@ -1,19 +1,19 @@
 [gd_scene format=3 uid="uid://dywudlfiryowv"]
 
-[ext_resource type="Script" uid="uid://dargu8opic11j" path="res://gun.gd" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://cmblb434fddbd" path="res://player.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://dngbyg04he8bu" path="res://eye.tscn" id="1_h2yge"]
+[ext_resource type="Script" uid="uid://b56fyol0uyugh" path="res://player.gd" id="2_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://o0klyqy1kswu" path="res://icon.svg" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://cdof0o0taiebs" path="res://gun.tscn" id="3_1bvp3"]
 
 [node name="main" type="Node2D" unique_id=176333220]
-script = ExtResource("1_ig7tw")
 
-[node name="Player" parent="." unique_id=1336333612 instance=ExtResource("2_0xm2m")]
-position = Vector2(274, 373)
+[node name="eye" parent="." unique_id=984397698 instance=ExtResource("1_h2yge")]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1862560652]
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1654291331]
+script = ExtResource("2_1bvp3")
 
-[node name="Label" type="Label" parent="CanvasLayer" unique_id=2032252846]
-offset_left = 72.0
-offset_top = 21.0
-offset_right = 112.0
-offset_bottom = 44.0
-text = "foisahfioasfho"
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=239928994]
+texture = ExtResource("2_h2yge")
+
+[node name="Gun" parent="Player" unique_id=204256679 instance=ExtResource("3_1bvp3")]
+position = Vector2(108, -55)

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dngbyg04he8bu"]
+
+[ext_resource type="Script" uid="uid://25prf3dvqniv" path="res://eye.gd" id="1_05vdx"]
+
+[node name="eye" type="CharacterBody2D" unique_id=984397698]
+position = Vector2(487, 395)
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_05vdx")
