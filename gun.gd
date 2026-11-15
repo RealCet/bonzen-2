@@ -16,9 +16,10 @@ func _process(delta: float) -> void:
 	else:
 		scale.y = 1
  
+ 
 	if Input.is_action_just_pressed("fire"):
 		print("a")
 		var bullet_instance = BULLET.instantiate()
-		add_sibling(bullet_instance)
+		get_parent().add_sibling(bullet_instance)
 		bullet_instance.global_position = muzzle.global_position
-		bullet_instance.rotation = rotation
+		bullet_instance.rotation = muzzle.global_rotation
