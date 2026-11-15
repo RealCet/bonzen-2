@@ -1,47 +1,22 @@
 [gd_scene format=3 uid="uid://cmblb434fddbd"]
 
 [ext_resource type="Script" uid="uid://b56fyol0uyugh" path="res://player.gd" id="1_onrkg"]
-[ext_resource type="Texture2D" uid="uid://o0klyqy1kswu" path="res://icon.svg" id="2_i3pqv"]
-[ext_resource type="PackedScene" uid="uid://cdof0o0taiebs" path="res://gun.tscn" id="3_i3pqv"]
-[ext_resource type="Script" uid="uid://d0i7qcqc4fful" path="res://orbsCounter.gd" id="4_hqtel"]
-[ext_resource type="PackedScene" uid="uid://dngbyg04he8bu" path="res://eye.tscn" id="5_sweqy"]
+[ext_resource type="Texture2D" uid="uid://rssmwk6wun65" path="res://gordon freeman.png" id="2_sweqy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jpt3y"]
-size = Vector2(128, 128)
+size = Vector2(238.75, 468.5)
 
 [node name="Player" type="CharacterBody2D" unique_id=1336333612]
 script = ExtResource("1_onrkg")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1599999111]
-texture = ExtResource("2_i3pqv")
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_sweqy")
 
-[node name="pearlPickup" type="Area2D" parent="." unique_id=1244719708]
+[node name="pickupEye" type="Area2D" parent="." unique_id=1244719708]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="pearlPickup" unique_id=1340637596]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pickupEye" unique_id=1340637596]
+position = Vector2(-8.375, 1)
 shape = SubResource("RectangleShape2D_jpt3y")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2137462911]
-
-[node name="Gun" parent="." unique_id=204256679 instance=ExtResource("3_i3pqv")]
-position = Vector2(100.000015, -48)
-scale = Vector2(0.66, 0.66)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=247720767]
-
-[node name="Label" type="Label" parent="CanvasLayer" unique_id=218848402]
-anchors_preset = -1
-anchor_left = 0.59900004
-anchor_top = 0.20700002
-anchor_right = 0.75000006
-anchor_bottom = 0.24200001
-offset_left = 197.95197
-offset_top = -104.13602
-offset_right = 238.99994
-offset_bottom = -103.81601
-text = "eyes: 0"
-script = ExtResource("4_hqtel")
-
-[node name="eye" parent="." unique_id=1332932606 instance=ExtResource("5_sweqy")]
-position = Vector2(487, 395)
-
-[connection signal="area_entered" from="pearlPickup" to="." method="_on_pearl_pickup_area_entered"]
+[connection signal="area_entered" from="pickupEye" to="." method="_on_pickup_eye_area_entered"]

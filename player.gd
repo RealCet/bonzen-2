@@ -1,11 +1,11 @@
 extends CharacterBody2D
  
- 
 const MAX_SPEED: int = 125
 const ACCELERATION: int = 1400
 const FRICTION: int = 1000
 const eye = preload("res://eye.tscn")
 @onready var sprite: Sprite2D = $Sprite2D
+@onready var gun: Node2D = $Gun
 #@onready var animation_player: AnimationPlayer = $AnimationPlayer
  #var eye_instance = eye.instantiate()
 #get_parent().add_sibling(eye_instannce) 
@@ -27,7 +27,8 @@ func _process(delta: float) -> void:
 	
 	move_and_slide()
 
-
-func _on_pearl_pickup_area_entered(area: Area2D) -> void:
-	if area.is.in.group("pearl"):
+func _on_pickup_eye_area_entered(area):
+	if area.is_in_group("eye"):
 		area.queue_free()
+		gun.ammo += 1
+		print(gun.ammo)

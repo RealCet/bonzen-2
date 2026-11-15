@@ -20,11 +20,11 @@ func _process(delta: float) -> void:
  
 	if Input.is_action_just_pressed("fire"):
 		if ammo > 0:
+			print(ammo)
 			var bullet_instance = BULLET.instantiate()
 			get_parent().add_sibling(bullet_instance)
 			bullet_instance.global_position = muzzle.global_position
 			bullet_instance.set_direction(muzzle.global_transform.x)
 			ammo -= 1
-			print(ammo)
 		else:
-			print("no bullet hahah")
+			print("0")

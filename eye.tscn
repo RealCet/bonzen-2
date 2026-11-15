@@ -1,20 +1,16 @@
 [gd_scene format=3 uid="uid://dngbyg04he8bu"]
 
-[ext_resource type="Script" uid="uid://25prf3dvqniv" path="res://eye.gd" id="1_05vdx"]
 [ext_resource type="Texture2D" uid="uid://cjaoeg8vvjq8p" path="res://eye.png" id="2_1t7xr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jpt3y"]
-radius = 176.7767
+radius = 188.02394
 
-[node name="eye" type="CharacterBody2D" unique_id=737441725]
-position = Vector2(487, 395)
-scale = Vector2(0.2, 0.2)
-collision_layer = 64
-collision_mask = 32
-script = ExtResource("1_05vdx")
+[node name="eye" type="Area2D" unique_id=2097720055 groups=["eye"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=876686087]
-shape = SubResource("CircleShape2D_jpt3y")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1446195428]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1928884369]
+position = Vector2(456, 388)
 texture = ExtResource("2_1t7xr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1247364656]
+position = Vector2(462, 391)
+shape = SubResource("CircleShape2D_jpt3y")

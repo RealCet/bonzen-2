@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dngbyg04he8bu" path="res://eye.tscn" id="1_h2yge"]
 [ext_resource type="Script" uid="uid://b56fyol0uyugh" path="res://player.gd" id="2_1bvp3"]
-[ext_resource type="Texture2D" uid="uid://o0klyqy1kswu" path="res://icon.svg" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://cdof0o0taiebs" path="res://gun.tscn" id="3_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://rssmwk6wun65" path="res://gordon freeman.png" id="3_lquwl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ry7kh"]
 size = Vector2(1166, 20)
@@ -16,6 +16,9 @@ size = Vector2(50.5, 683.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v3mdt"]
 size = Vector2(39, 722)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
+size = Vector2(200, 375)
 
 [node name="main" type="Node2D" unique_id=176333220]
 
@@ -37,13 +40,34 @@ shape = SubResource("RectangleShape2D_3bsbf")
 position = Vector2(1149, 315)
 shape = SubResource("RectangleShape2D_v3mdt")
 
-[node name="eye" parent="." unique_id=984397698 instance=ExtResource("1_h2yge")]
-
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1654291331]
 script = ExtResource("2_1bvp3")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=239928994]
-texture = ExtResource("2_h2yge")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_lquwl")
+
+[node name="pickupEye" type="Area2D" parent="Player" unique_id=2030306960 groups=["pickupEye"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/pickupEye" unique_id=1073273969]
+position = Vector2(-6, -1.5)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_1bvp3")
 
 [node name="Gun" parent="Player" unique_id=204256679 instance=ExtResource("3_1bvp3")]
-position = Vector2(108, -55)
+position = Vector2(48, -27)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Player" unique_id=2076441980]
+
+[node name="ammo" type="Label" parent="Player/CanvasLayer" unique_id=456413408]
+offset_left = 30.0
+offset_top = 614.0
+offset_right = 99.0
+offset_bottom = 637.0
+text = "Ammo: 6"
+
+[node name="eye" parent="." unique_id=737441725 instance=ExtResource("1_h2yge")]
+position = Vector2(748, 474)
+scale = Vector2(0.15, 0.15)
+
+[connection signal="area_entered" from="Player/pickupEye" to="Player" method="_on_pickup_eye_area_entered"]
