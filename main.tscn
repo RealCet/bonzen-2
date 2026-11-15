@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dywudlfiryowv"]
+
+[ext_resource type="Script" uid="uid://dargu8opic11j" path="res://gun.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://cmblb434fddbd" path="res://player.tscn" id="2_0xm2m"]
+
+[node name="main" type="Node2D" unique_id=176333220]
+script = ExtResource("1_ig7tw")
+
+[node name="Player" parent="." unique_id=1336333612 instance=ExtResource("2_0xm2m")]
+position = Vector2(274, 373)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1862560652]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=2032252846]
+offset_left = 72.0
+offset_top = 21.0
+offset_right = 112.0
+offset_bottom = 44.0
+text = "foisahfioasfho"
