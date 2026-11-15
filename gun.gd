@@ -22,4 +22,4 @@ func _process(delta: float) -> void:
 		var bullet_instance = BULLET.instantiate()
 		get_parent().add_sibling(bullet_instance)
 		bullet_instance.global_position = muzzle.global_position
-		bullet_instance.rotation = muzzle.global_rotation
+		bullet_instance.set_direction(muzzle.global_transform.x)
