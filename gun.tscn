@@ -1,13 +1,16 @@
 [gd_scene format=3 uid="uid://cdof0o0taiebs"]
 
 [ext_resource type="Script" uid="uid://dargu8opic11j" path="res://gun.gd" id="1_vk1bi"]
-[ext_resource type="Texture2D" uid="uid://o0klyqy1kswu" path="res://icon.svg" id="2_dk5gl"]
+[ext_resource type="Texture2D" uid="uid://76otg4s42db8" path="res://snubnose revolver gun.png" id="2_dk5gl"]
 
 [node name="Gun" type="Node2D" unique_id=204256679]
 script = ExtResource("1_vk1bi")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1288615763]
-texture = ExtResource("2_dk5gl")
-
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1016754073]
-position = Vector2(68, 0)
+position = Vector2(150, 4)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1288615763]
+position = Vector2(-1.9999998, 78)
+scale = Vector2(0.66, 0.66)
+texture = ExtResource("2_dk5gl")
+flip_h = true
