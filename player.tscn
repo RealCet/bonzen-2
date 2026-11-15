@@ -19,4 +19,4 @@ shape = SubResource("RectangleShape2D_jpt3y")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2137462911]
 
 [node name="Gun" parent="." unique_id=204256679 instance=ExtResource("3_i3pqv")]
-position = Vector2(140, -3)
+position = Vector2(139, -64)
