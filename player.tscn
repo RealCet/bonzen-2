@@ -6,6 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jpt3y"]
 size = Vector2(238.75, 468.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f0n2d"]
+size = Vector2(228, 477)
+
 [node name="Player" type="CharacterBody2D" unique_id=1336333612]
 script = ExtResource("1_onrkg")
 
@@ -18,5 +21,9 @@ texture = ExtResource("2_sweqy")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pickupEye" unique_id=1340637596]
 position = Vector2(-8.375, 1)
 shape = SubResource("RectangleShape2D_jpt3y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=926909835]
+position = Vector2(-13, 3.5)
+shape = SubResource("RectangleShape2D_f0n2d")
 
 [connection signal="area_entered" from="pickupEye" to="." method="_on_pickup_eye_area_entered"]
